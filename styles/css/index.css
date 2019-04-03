@@ -121,6 +121,22 @@ ul {
 .layout .pygviews {
   width: 100%;
   flex: 1;
+  overflow: scroll;
+}
+.layout .pygviews .nav {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+.layout .pygviews .nav a {
+  padding-top: 10px;
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+}
+.layout .pygviews .nav a img {
+  width: 50%;
+  display: inline-block;
 }
 .layout .footer {
   width: 100%;

@@ -4,15 +4,22 @@ $(function () {
   function banner() {
     $.ajax({
       type:'get',
-      url: 'http://157.122.54.189:9094/api/public/v1/home/swiperdata',
+      url: 'home/swiperdata',
       dataType:'json',
-      sunccess:function (res) {
-        console.log(res);
+      success:function (res) {
+        // console.log(res);
+       if(res.meta.status==200){
+         var html=template('bantemp',res);
+         $('.ban').html(html);
+         var indicator = template('indicate',res)
+         $('.indicator').html(indicator);
+         var gallery = mui('.mui-slider');
+         gallery.slider({
+           interval: 2000 //自动轮播周期，若为0则不自动播放，默认为0；
+         });
+       }
       }
     })
   }
-  var gallery = mui('.mui-slider');
-  gallery.slider({
-    interval: 2000 //自动轮播周期，若为0则不自动播放，默认为0；
-  });
+  
 })

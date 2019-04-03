@@ -22,21 +22,42 @@
         <div class="pygviews">
             <div class="banner">
                 <div class="mui-slider">
-                    <div class="mui-slider-group mui-slider-loop">
+                    <div class="mui-slider-group mui-slider-loop ban">
                         <!--支持循环，需要重复图片节点-->
 
                     </div>
-                    <div class="mui-slider-indicator">
-                        <div class="mui-indicator"></div>
-                        <div class="mui-indicator"></div>
-                        <div class="mui-indicator"></div>
-                        <div class="mui-indicator mui-active"></div>
+                    <div class="mui-slider-indicator indicator">
+                        
+                        <!-- <div class="mui-indicator mui-active"></div> -->
                     </div>
                 </div>
 
             </div>
-            <div class="nav"></div>
-            <div class="content"></div>
+            <div class="nav">
+              <a href='javascript:;'>
+                  <img src="https://image1.suning.cn/uimg/cms/img/155411189774023862.gif?format=_is_120w_120h" alt="">
+              <div class="text">爆款手机</div>
+            </a>
+             <a href='javascript:;'>
+                 <img src="https://image1.suning.cn/uimg/cms/img/155175138228120594.png?format=_is_120w_120h.webp"
+                     alt="">
+                 <div class="text">生活家电</div>
+             </a>
+              <a href='javascript:;'>
+                  <img src="https://image2.suning.cn/uimg/cms/img/154708804944582613.png?format=_is_120w_120h.webp"
+                      alt="">
+                  <div class="text">生鲜产品</div>
+              </a>
+               <a href='javascript:;'>
+                   <img src="https://image3.suning.cn/uimg/cms/img/154710176930796178.png?format=_is_120w_120h.webp"
+                       alt="">
+                   <div class="text">限时抢购</div>
+               </a>
+            </div>
+            <div class="goodList">
+                <div class="goods1">
+                </div>
+            </div>
         </div>
         <div class="footer">
             <nav class="mui-bar mui-bar-tab">
@@ -61,19 +82,23 @@
     </div>
 </body>
 <script type='text/template' id='bantemp'>
-    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./static/images/goods_thnmp.png" /></a>
+    <div class="mui-slider-item mui-slider-item-duplicate"><a href="{{data[data.length-1].navigator_url}}"><img src="{{data[data.length-1].image_src}}" /></a>
     </div>
-    <div class="mui-slider-item"><a href="#"><img src="./static/images/lbxx.jpg" /></a></div>
-    <div class="mui-slider-item"><a href="#"><img src="./static/images/lbxx.jpg" /></a></div>
-    <div class="mui-slider-item"><a href="#"><img src="./static/images/lbxx.jpg" /></a></div>
-    <div class="mui-slider-item"><a href="#"><img src="./static/images/lbxx.jpg" /></a></div>
+    {{each data value index}}
+    <div class="mui-slider-item"><a href="{{value.navigator_url}}"><img src="{{value.image_src}}" /></a></div>
+    {{/each}}
     <!--支持循环，需要重复图片节点-->
-    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="./static/images/goods_thnmp.png" /></a>
+    <div class="mui-slider-item mui-slider-item-duplicate"><a href="{{data[0].navigator_url}}"><img src="{{data[0].image_src}}" /></a>
     </div>
+</script>
+<script type='text/template' id='indicate'>
+    {{each data value index}}
+    <div class="mui-indicator {{index==0?'mui-active':''}}"></div>
+    {{/each}}
 </script>
 <script src='./lib/zepto/zepto.js'></script>
 <script src='./lib/mui/js/mui.min.js'></script>
 <script src='./lib/arttemplate/template-web.js'></script>
+<script src='./styles/js/common.js'></script>
 <script src='./styles/js/index.js'></script>
-
 </html>
