@@ -1,11 +1,13 @@
 $(function () {
    banner();
    goodsList();
+   cat();
+   cat1();
   //图片以及小圆点轮播渲染
   function banner() {
     $.ajax({
       type:'get',
-      url: 'home/swiperdata',
+      url: 'http://157.122.54.189:9094/api/public/v1/home/swiperdata',
       dataType:'json',
       success:function (res) {
         // console.log(res);
@@ -26,10 +28,10 @@ $(function () {
   function goodsList() {
     $.ajax({
       type:'get',
-      url: 'home/goodslist',
+      url: 'http://157.122.54.189:9094/api/public/v1/home/goodslist',
       dataType:'json',
       success:function (res) {
-        console.log(res);
+        // console.log(res);
         if(res.meta.status==200){
           var html1 = template('goodsList',res);
           $('.goodList').html(html1);
@@ -37,6 +39,26 @@ $(function () {
       }
     })
   }
-
+  function cat() {
+    // console.log(123);
+    $.ajax({
+      type:'get',
+      url:'/getcate',
+      dataType:'json',
+      success:function (res) {
+        // console.log(res);
+      }
+    })
+  }
+  function cat1() {
+    $.ajax({
+      type:'get',
+      url:'/catjson',
+      dataType:'json',
+      success:function (res) {
+        console.log(res);
+      }
+    })
+  }
   
 })
