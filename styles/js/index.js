@@ -1,5 +1,6 @@
 $(function () {
    banner();
+   goodsList();
   //图片以及小圆点轮播渲染
   function banner() {
     $.ajax({
@@ -23,7 +24,18 @@ $(function () {
   }
   //商品列表渲染
   function goodsList() {
-    
+    $.ajax({
+      type:'get',
+      url: 'home/goodslist',
+      dataType:'json',
+      success:function (res) {
+        console.log(res);
+        if(res.meta.status==200){
+          var html1 = template('goodsList',res);
+          $('.goodList').html(html1);
+        }
+      }
+    })
   }
 
   

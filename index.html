@@ -55,43 +55,7 @@
                 </a>
             </div>
             <div class="goodList">
-                <div class="goods">
-                    <img src="./static/images/goods_cate1.png" alt="">
-                    <div class="pro">
-                        <div class="pros">
-                            <a href="javascript:;">
-                                <img src="./static/images/goods_thnmp.png" alt="">
-                                <div class='text mui-ellipsis-2'>倍贝乐 木制环保百变扭扭虫 扭扭毛毛虫 锻炼手眼协调婴幼儿童益智玩具积木礼物</div>
-                                <div class="price">￥389</div>
-                            </a>
-                            <a class="mui-btn mui-btn-danger mui-btn-outlined" href="javascript:;">找相似</a>
-                        </div>
-                        <div class="pros">
-                            <a href="javascript:;">
-                                <img src="./static/images/goods_thnmp.png" alt="">
-                                <div class='text mui-ellipsis-2'>倍贝乐 木制环保百变扭扭虫 扭扭毛毛虫 锻炼手眼协调婴幼儿童益智玩具积木礼物</div>
-                                <div class="price">￥389</div>
-                            </a>
-                            <a class="mui-btn mui-btn-danger mui-btn-outlined" href="javascript:;">找相似</a>
-                        </div>
-                        <div class="pros">
-                            <a href="javascript:;">
-                                <img src="./static/images/goods_thnmp.png" alt="">
-                                <div class='text mui-ellipsis-2'>倍贝乐 木制环保百变扭扭虫 扭扭毛毛虫 锻炼手眼协调婴幼儿童益智玩具积木礼物</div>
-                                <div class="price">￥389</div>
-                            </a>
-                            <a class="mui-btn mui-btn-danger mui-btn-outlined" href="javascript:;">找相似</a>
-                        </div>
-                        <div class="pros">
-                            <a href="javascript:;">
-                                <img src="./static/images/goods_thnmp.png" alt="">
-                                <div class='text mui-ellipsis-2'>倍贝乐 木制环保百变扭扭虫 扭扭毛毛虫 锻炼手眼协调婴幼儿童益智玩具积木礼物</div>
-                                <div class="price">￥389</div>
-                            </a>
-                            <a class="mui-btn mui-btn-danger mui-btn-outlined" href="javascript:;">找相似</a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="footer">
@@ -116,6 +80,8 @@
         </div>
     </div>
 </body>
+
+ <!-- 动态渲染轮播图 -->
 <script type='text/template' id='bantemp'>
     <div class="mui-slider-item mui-slider-item-duplicate"><a href="{{data[data.length-1].navigator_url}}"><img src="{{data[data.length-1].image_src}}" /></a>
     </div>
@@ -126,9 +92,33 @@
     <div class="mui-slider-item mui-slider-item-duplicate"><a href="{{data[0].navigator_url}}"><img src="{{data[0].image_src}}" /></a>
     </div>
 </script>
+
+<!-- 动态渲染小圆点 -->
 <script type='text/template' id='indicate'>
     {{each data value index}}
     <div class="mui-indicator {{index==0?'mui-active':''}}"></div>
+    {{/each}}
+</script>
+
+
+<!-- 动态渲染商品列表 -->
+<script type='text/template' id='goodsList'>
+    {{each data value index}}
+    <div class="goods">
+        <img src="{{value.group_img}}" alt="">
+        <div class="pro">
+            {{each value.goods v i}}
+            <div class="pros">
+                <a href="javascript:;">
+                    <img src="{{v.goods_small_logo}}" alt="">
+                    <div class='text mui-ellipsis-2'>{{v.goods_name}}</div>
+                    <div class="price">￥{{v.goods_price}}</div>
+                </a>
+                <a class="mui-btn mui-btn-danger mui-btn-outlined" href="javascript:;">找相似</a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
     {{/each}}
 </script>
 <script src='./lib/zepto/zepto.js'></script>
