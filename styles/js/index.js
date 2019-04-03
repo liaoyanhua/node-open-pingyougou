@@ -1,6 +1,6 @@
 $(function () {
    banner();
-  //图片轮播渲染
+  //图片以及小圆点轮播渲染
   function banner() {
     $.ajax({
       type:'get',
@@ -21,5 +21,10 @@ $(function () {
       }
     })
   }
+  //商品列表渲染
+  function goodsList() {
+    
+  }
+
   
 })

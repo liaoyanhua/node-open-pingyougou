@@ -129,14 +129,60 @@ ul {
   justify-content: center;
 }
 .layout .pygviews .nav a {
-  padding-top: 10px;
+  padding: 10px 0;
   flex: 1;
   text-align: center;
   font-size: 13px;
+  color: #333;
 }
 .layout .pygviews .nav a img {
   width: 50%;
   display: inline-block;
+}
+.layout .pygviews .goodList {
+  width: 100%;
+  padding: 15px;
+}
+.layout .pygviews .goodList .goods {
+  width: 100%;
+}
+.layout .pygviews .goodList .goods > img {
+  display: inline-block;
+  width: 100%;
+}
+.layout .pygviews .goodList .goods > .pro {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.layout .pygviews .goodList .goods > .pro > .pros {
+  width: 48%;
+  background: #fff;
+  padding: 5px 5px;
+  margin-bottom: 10px;
+}
+.layout .pygviews .goodList .goods > .pro > .pros a:nth-of-type(1) {
+  display: inline-block;
+  width: 100%;
+  color: #333;
+  font-size: 13px;
+}
+.layout .pygviews .goodList .goods > .pro > .pros a:nth-of-type(1) > div:nth-of-type(2) {
+  color: red;
+  font-size: 16px;
+}
+.layout .pygviews .goodList .goods > .pro > .pros a:nth-of-type(1) > img {
+  display: block;
+  width: 100%;
+}
+.layout .pygviews .goodList .goods > .pro > .pros a:nth-of-type(2) {
+  margin: 0 29px;
+  display: inline-block;
+  width: 70%;
+  height: 30px;
+}
+.layout .pygviews .goodList .goods > .pro > .pros:nth-of-type(even) {
+  margin-left: 10px;
 }
 .layout .footer {
   width: 100%;
