@@ -1,8 +1,8 @@
 $(function () {
    banner();
    goodsList();
-   cat();
-   cat1();
+  //  cat();
+  //  cat1();
   //图片以及小圆点轮播渲染
   function banner() {
     $.ajax({
@@ -39,26 +39,26 @@ $(function () {
       }
     })
   }
-  function cat() {
-    // console.log(123);
-    $.ajax({
-      type:'get',
-      url:'/getcate',
-      dataType:'json',
-      success:function (res) {
-        // console.log(res);
-      }
-    })
-  }
-  function cat1() {
-    $.ajax({
-      type:'get',
-      url:'/catjson',
-      dataType:'json',
-      success:function (res) {
-        console.log(res);
-      }
-    })
-  }
+  // function cat() {
+  //   // console.log(123);
+  //   $.ajax({
+  //     type:'get',
+  //     url:'/getcate',
+  //     dataType:'json',
+  //     success:function (res) {
+  //       console.log(res);
+  //     }
+  //   })
+  // }
+  // function cat1() {
+  //   $.ajax({
+  //     type:'get',
+  //     url:'/catjson',
+  //     dataType:'json',
+  //     success:function (res) {
+  //       console.log(res);
+  //     }
+  //   })
+  // }
   
 })

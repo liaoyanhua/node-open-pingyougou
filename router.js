@@ -1,8 +1,12 @@
 const express=require('express');
-const shopCtrl=require('./ctroller/indexCtrl.js')
+const indexCtrl=require('./ctroller/indexCtrl.js');
+const cateCtrl=require('./ctroller/cateCtrl.js')
 var router=express.Router();
-router.get('/', shopCtrl.getindex)
-      .get('/getcate',shopCtrl.getcate)
-      .get('/catjson',shopCtrl.getcats)
+router.get('/index', indexCtrl.getindex) 
+      .get('/categories',cateCtrl.catePage)
+      .get('/getcate', cateCtrl.getcate)
+      .get('/catjson',indexCtrl.getcats)
+      .get('/getonecate',cateCtrl.getonecate)
+      .get('/twocate',cateCtrl.gettwocate)
 
 module.exports=router;
